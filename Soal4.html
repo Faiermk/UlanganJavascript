@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Menghitung Keliling Jajar Genjang</title>
+  </head>
+  <body>
+    <h2>Program Menghitung Keliling Jajar Genjang</h2>
+
+    <label for="sisiA">Nilai Sisi A:</label>
+    <input type="number" id="sisiA" placeholder="Inputkan Sisi A" />
+
+    <label for="sisiB">Nilai Sisi B:</label>
+    <input type="number" id="sisiB" placeholder="Inputkan Sisi B" />
+
+    <button onclick="hitungKeliling()">Hitung Keliling</button>
+
+    <p id="result"></p>
+
+    <script>
+      function hitungKeliling() {
+        const sisiA = parseFloat(document.getElementById("sisiA").value);
+        const sisiB = parseFloat(document.getElementById("sisiB").value);
+
+        if (!isNaN(sisiA) && !isNaN(sisiB)) {
+          const keliling = 2 * (sisiA + sisiB);
+
+          document.getElementById(
+            "result"
+          ).innerHTML = `Keliling Jajar Genjang: ${keliling}`;
+        } else {
+          document.getElementById("result").innerHTML =
+            "Masukkan angka yang valid untuk sisi A dan sisi B.";
+        }
+      }
+    </script>
+    <form action="index.html">
+      <button type="submit">Back</button>
+    </form>
+  </body>
+</html>

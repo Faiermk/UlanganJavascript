@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menampilkan Kalimat</title>
+    <script>
+        // fungsi untuk menampilkan kalimat berdasarkan nilai
+        function munculKalimat() {
+          // mengambil elemen input dan output
+          var input = document.getElementById("inputNilai");
+          var output = document.getElementById("outputKalimat");
+          // mengambil nilai dari input
+          var nilai = input.value;
+          // mengecek kondisi nilai
+          if (nilai > 80) {
+            // menampilkan kalimat "SANGAT MEMUASKAN" jika nilai di atas 80
+            output.innerHTML = "SANGAT MEMUASKAN";
+          } else if (nilai >= 60) {
+            // menampilkan kalimat "MEMUASKAN" jika nilai berada di antara 60 hingga 80
+            output.innerHTML = "MEMUASKAN";
+          } else {
+            // menampilkan kalimat "JANGAN MENYERAH, COBA LAGI !" jika nilai di bawah 60
+            output.innerHTML = "JANGAN MENYERAH, COBA LAGI !";
+          }
+        }
+      </script>
+</head>
+<body>
+    <h1>Program Menampilkan Kalimat Berdasarkan Nilai</h1>
+  <p>Masukkan nilai Anda:</p>
+  <input id="inputNilai" type="number" min="0" max="100">
+  <button onclick="munculKalimat()">Tampilkan Kalimat</button>
+  <p>Output Kalimat:</p>
+  <p id="outputKalimat"></p>
+  <form action="index.html">
+    <button type="submit">
+        Back
+    </button>
+  </form>
+</body>
+</html>
